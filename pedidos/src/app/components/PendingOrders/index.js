@@ -3,23 +3,23 @@ import { List, Container, Button, ListItem } from "@material-ui/core";
 
 import NavBar from '../../screens/NavBar';
 import Order from '../../screens/Order';
-import {newOrderColumns} from '../../../constants/columns'
+import {pendingOrdersColumns} from '../../../constants/columns'
 import { ListItemText, Typography } from "@mui/material";
 
 const list = [
     {
       codigo_cliente: 'AAA002',
       cliente_pedido: 'NESTLE ARGENTINA S.A. | 200047390',
-      items: [{id: 1 , articulo:"ENSOLMIN POTASIO NP", cod_art:77000168, cantidad: 10000, place: 'Tortu'},{id: 2, articulo:"PETMIX VIT GEN NP 25 KG", cod_art:43850739, cantidad: 6000, place: 'Tortu'},{id: 3 , articulo:"ENSOL-BAC 15% 25 KG", cod_art:77700017, cantidad: 100, place: 'Tortu'}]
+      items: [{id: 1 , articulo:"ENSOLMIN POTASIO NP", cod_art:77000168, cantidad: 10000, place: 'Tortu', finished : true},{id: 2, articulo:"PETMIX VIT GEN NP 25 KG", cod_art:43850739, cantidad: 6000, place: 'Tortu', finished : true},{id: 3 , articulo:"ENSOL-BAC 15% 25 KG", cod_art:77700017, cantidad: 100, place: 'Pilar', finished : false}]
     },
     {
       codigo_cliente: 'EEE051',
       cliente_pedido: 'ENSOLPIGS (NUTRICOR) S.A. | 100014208',
-      items: [{id: 4 , articulo:"ENSOLMIX DES ADV 0.8%", cod_art:77001645, cantidad: 1200, place: 'Pilar'},{id: 5, articulo:"PETMIX VIT GEN NP 25 KG", cod_art:43850739, cantidad: 6000, place: 'Pilar'},{id: 6 , articulo:"ENSOL-BAC 15% 25 KG", cod_art:77700017, cantidad: 100, place: 'Pilar'}]
+      items: [{id: 4 , articulo:"ENSOLMIX DES ADV 0.8%", cod_art:77001645, cantidad: 1200, place: 'Pilar', finished : true},{id: 5, articulo:"PETMIX VIT GEN NP 25 KG", cod_art:43850739, cantidad: 6000, place: 'Tortu', finished : false},{id: 6 , articulo:"ENSOL-BAC 15% 25 KG", cod_art:77700017, cantidad: 100, place: 'Pilar', finished : true}]
     },
   ];
 
-class NuevosPedidos extends React.Component {
+class PendingOrders extends React.Component {
 
     constructor(props) {
       super(props)
@@ -55,12 +55,7 @@ class NuevosPedidos extends React.Component {
                 <Typography>
                   {'Cliente & Pedido: ' + order.cliente_pedido}
                 </Typography>
-
-                <Button label = 'Aceptar pedido'>
-                  
-                  Aceptar
-                </Button>
-              <Order data = {order} onSelect = {this.handleSelect.bind(this)} columns = {newOrderColumns}>
+              <Order data = {order} onSelect = {this.handleSelect.bind(this)} columns = {pendingOrdersColumns}>
               </Order>
               </Container>
               </ListItem>
@@ -80,4 +75,4 @@ class NuevosPedidos extends React.Component {
         )
     }
 }
-export default NuevosPedidos;
+export default PendingOrders;

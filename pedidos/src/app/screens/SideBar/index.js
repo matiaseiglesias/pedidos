@@ -14,21 +14,21 @@ function SideBar() {
             <ListItem>
                 <Button 
                     label = 'Nuevos pedidos'
-                    onClick = {()=> history.push(ROUTES.LOGIN)}>
+                    onClick = {()=> history.push(ROUTES.CONTENT)}>
                     Nuevos pedidos
                 </Button>
             </ListItem>
             <ListItem>
                 <Button 
                     label = 'Pedidos pendientes'
-                    onClick = {()=> history.push(ROUTES.LOGIN)}>
+                    onClick = {()=> history.push(ROUTES.PENDING)}>
                     Pedidos pendientes
                 </Button>
             </ListItem>
             <ListItem>
                 <Button 
                     label = 'Pedidos en espera'
-                    onClick = {()=> history.push(ROUTES.LOGIN)}>
+                    onClick = {()=> history.push(ROUTES.BACKORDERS)}>
                     Pedidos en espera
                 </Button>
             </ListItem>

@@ -1,7 +1,8 @@
 export const ROUTES = {
   LOGIN: '/signIn',
   CONTENT: '/content',
-  EVAL: '/eval',
+  PENDING: '/pendingOrders', 
+  BACKORDERS: '/backorders',
   ADDRULE: '/addrule',
   EDITRULE: '/editrule',
   VARIABLES: '/variables',
