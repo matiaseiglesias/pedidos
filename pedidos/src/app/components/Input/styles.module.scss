@@ -1,0 +1,51 @@
+.inputLabel {
+  font-size: 18px;
+  line-height: 24px;
+  padding-left: 12px;
+  color: white;
+}
+
+.input {
+  background: white;
+  border: 1px solid blue;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 40px;
+  line-height: 24px;
+  margin-bottom: 10px;
+  max-width: 500px;
+  padding: 5px 15px;
+  width: 100%;
+
+  &.inputError {
+   border-color: red;
+  }
+}
+
+.loginButton {
+  background: blue;
+  border-radius: 10px;
+  height: 40px;
+  width: 500px;
+}
+
+.login-button-text {
+  color: white;
+  font-size: 15px;
+  line-height: 19px;
+}
+
+.forgotPassword {
+  color: blue;
+  font-size: 12px;
+  line-height: 15px;
+  padding-left: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  padding-left: 15px;
+}
+
