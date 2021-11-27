@@ -1,6 +1,5 @@
-
 .container {
-  background-color: #282c34;
+  background-color: #16b911;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -8,7 +7,14 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
-
+.logo {
+  border-radius: 10px;
+}
+.title {
+  border-radius: 10px;
+  color: white;
+  padding-bottom: 1%;
+}
 .loginFormContainer {
   width: 500px;
   display: flex;

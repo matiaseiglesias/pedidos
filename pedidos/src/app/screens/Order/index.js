@@ -9,14 +9,15 @@ function Order(props) {
     
     return (
 
-        <div style={{ height: 400, width: '100%' }}>
+        <div style={{ height: 300, width: '100%' }}>
       <DataGrid
         rows={props.data.items}
         columns={props.columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
+        pageSize={100}
+        rowsPerPageOptions={[100, 150, 200]}
+        pagination
         disableSelectionOnClick
-        onEditRowsModelChange = {(editRowsModel, details) => {for (let itemId in editRowsModel) {props.onSelect(props.data.id, itemId, editRowsModel[itemId].place.value)}}}
+        //onEditRowsModelChange = {(editRowsModel, details) => {for (let itemId in editRowsModel) {props.onSelect(props.data.id, itemId, editRowsModel[itemId].place.value)}}}
       />
     </div>
     )

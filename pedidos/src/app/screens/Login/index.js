@@ -43,7 +43,9 @@ function Login() {
   
   return (
     <div className={styles.container}>
-      <div>Ensol Pedidos</div>
+      <div className={styles.title} >Apertura De Pedidos WMS</div>
+      <img className={`logo ${styles.logo}`} src= 'http://www.ensolsa.com/assets/img/logo.jpg'> 
+      </img>
       <form className={`column center ${styles.loginFormContainer}`} onSubmit={handleSubmit}>
         <Input
           name="email"

@@ -22,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  appBar: {
+    background: 'linear-gradient(45deg, #20B613 30%, #17E805 90%)',
+    color: 'white'
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -93,14 +97,14 @@ export default function MenuAppBar({onRefresh, path}) {
           label={auth ? 'Logout' : 'Login'}
         />
       </FormGroup> */}
-        <AppBar position="static">
+        <AppBar position="static" className={classes.appBar}>
 
           <Toolbar>
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick = {handleVisibility}>
               <MenuIcon/>
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              Ensol Pedidos
+              Apertura De Pedidos WMS
             </Typography>
             {(
                 <div>

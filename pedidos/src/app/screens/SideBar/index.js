@@ -32,6 +32,13 @@ function SideBar() {
                     Pedidos en espera
                 </Button>
             </ListItem>
+            <ListItem>
+                <Button 
+                    label = 'Historial de pedidos'
+                    onClick = {()=> history.push(ROUTES.BACKORDERS)}>
+                    Historial de pedidos
+                </Button>
+            </ListItem>
         </List>
     )
 }
