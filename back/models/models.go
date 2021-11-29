@@ -7,7 +7,7 @@ import (
 	"gorm.io/gorm"
 )
 
-var DB, _ = InitDB()
+var DB, _ = "nana", "na" //InitDB()
 
 func InitDB() (*gorm.DB, error) {
 	dsn := "sqlserver://sa:Test1234@localhost:1433?database=master"

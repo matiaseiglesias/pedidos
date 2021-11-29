@@ -2,11 +2,11 @@ package orders
 
 import (
 	"fmt"
-	"mirepo/models"
 	"mirepo/models/orders"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/ulule/deepcopier"
 )
 
 func Hello(c *gin.Context) {
@@ -14,8 +14,34 @@ func Hello(c *gin.Context) {
 	fmt.Println("TO-DO")
 }
 
+func GetOrderByStatus(c *gin.Context) {
+	dbQuery := orders.GetOrders()
+
+	jsonOrders := make(map[string]*orders.JsonOrder)
+	response := []*orders.JsonOrder{}
+
+	for _, order := range dbQuery {
+		ProccesedOrder, ok := jsonOrders[order.ClientePedido]
+		if ok {
+			ProccesedOrder.AddItem(order.Items)
+		} else {
+			newOrder := &orders.JsonOrder{}
+			deepcopier.Copy(order).To(newOrder)
+			newOrder.AddItem(order.Items)
+			jsonOrders[order.ClientePedido] = newOrder
+		}
+	}
+
+	for _, o := range jsonOrders {
+		response = append(response, o)
+	}
+
+	c.IndentedJSON(http.StatusOK, response)
+	fmt.Println("TO-DO")
+}
+
 func TestDb(c *gin.Context) {
-	models.DB.Create(&orders.Order{Id: "25"})
+	//models.DB.Create(&orders.Order{Id: "25"})
 	c.IndentedJSON(http.StatusOK, "TO-DO added")
 	fmt.Println("TO-DO")
 }
@@ -30,12 +56,12 @@ func GetOrderById(c *gin.Context) {
 	fmt.Println("TO-DO")
 }
 
-func GetOrderByStatus(c *gin.Context) {
+func ModifyOrderPlace(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, "TO-DO")
 	fmt.Println("TO-DO")
 }
 
-func ModifyOrderPlace(c *gin.Context) {
+func NewOrder(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, "TO-DO")
 	fmt.Println("TO-DO")
 }

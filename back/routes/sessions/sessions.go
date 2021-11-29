@@ -9,6 +9,7 @@ import (
 func Route(route *gin.Engine) {
 	session := route.Group("/session")
 	{
-		session.POST("/session", sessions.Hello)
+		session.POST("/session", sessions.NewSession)
+		//session.GET("/", sessions.Hello)
 	}
 }

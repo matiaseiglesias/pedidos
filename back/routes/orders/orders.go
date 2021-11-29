@@ -9,8 +9,10 @@ import (
 func Route(route *gin.Engine) {
 	order := route.Group("/orders")
 	{
-		order.GET("/login", orders.TestDb)
-		order.POST("/submit", orders.Hello)
-		order.POST("/read", orders.Hello)
+		order.GET("/", orders.GetOrderByStatus)
+		order.GET("/:status", orders.GetOrderByStatus)
+		//order.GET("/:id", orders.GetOrderById)
+		//order.POST("/submit", orders.Hello)
+		order.POST("/", orders.NewOrder)
 	}
 }

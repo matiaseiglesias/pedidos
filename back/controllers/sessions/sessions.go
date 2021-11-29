@@ -1,13 +1,14 @@
 package sessions
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-func Hello(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, "TO-DO")
-	fmt.Println("TO-DO")
+func NewSession(c *gin.Context) {
+	//TODO hacer la query a coresec
+	answ := make(map[string]string)
+	answ["token"] = "dadadadfasfasf"
+	c.IndentedJSON(http.StatusOK, answ)
 }
