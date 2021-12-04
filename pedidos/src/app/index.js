@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom
 
 import {ROUTES} from '../constants/routes';
 import Login from './screens/Login';
-import NuevosPedidos from './components/NuevoPedidos';
+import NewOrders from './components/NewOrders';
 import PendingOrders from './components/PendingOrders';
 
 const App = () => (
@@ -20,9 +20,9 @@ const App = () => (
               }}
           />
           <Route exact path={ROUTES.LOGIN} component={Login}/>
-          <Route exact path={ROUTES.CONTENT} component={NuevosPedidos}/>
+          <Route exact path={ROUTES.CONTENT} component={NewOrders}/>
           <Route exact path={ROUTES.PENDING} component={PendingOrders}/>
-          <Route exact path={ROUTES.BACKORDERS} component={NuevosPedidos}/>
+          <Route exact path={ROUTES.BACKORDERS} component={NewOrders}/>
         </Switch>
       </Suspense>
     </Router>

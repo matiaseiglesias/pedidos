@@ -1,5 +1,5 @@
 export const newOrderColumns = [
-    { field: 'cod_art', headerName: 'Cód Art', width: 100, editable: false },
+    { field: 'cod_art', headerName: 'Cód Art', width: 120, editable: true },
     { field: 'articulo', headerName: 'Artículo', width: 220, editable: false },
     {
       field: 'cantidad',
